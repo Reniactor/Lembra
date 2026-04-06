@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pill Reminder</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/overlay.css">
+  <style>html { background: var(--bg-primary, #1a1410); }</style>
+</head>
+<body>
+  <div class="container">
+    <div class="glow"></div>
+
+    <div class="pill-icon">
+      <img src="assets/pill-icon.svg" alt="Pill" width="56" height="56">
+    </div>
+
+    <div class="greeting" id="greeting">Morning!</div>
+
+    <div class="question">
+      Did you have your<br>
+      <span class="highlight">...</span> yet?
+    </div>
+
+    <button class="confirm-btn" id="confirm-btn">
+      Yep, all done<span class="check">&#10003;</span>
+    </button>
+
+    <div class="timestamp" id="timestamp"></div>
+  </div>
+
+  <div class="celebration" id="celebration">
+    <div class="celebration-content" id="celebration-content">
+      <div class="thumb" id="celeb-icon"></div>
+      <div class="message" id="celeb-message"></div>
+      <div class="streak-msg" id="celeb-streak"></div>
+    </div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/overlay.js"></script>
+</body>
+</html>

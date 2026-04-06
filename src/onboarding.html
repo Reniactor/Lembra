@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Lembra</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/titlebar.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+  <link rel="stylesheet" href="css/time-picker.css">
+  <style>html { background: var(--bg-primary, #1a1410); }</style>
+</head>
+<body>
+<div class="window">
+  <div class="titlebar">
+    <span class="title">Lembra</span>
+    <div class="controls">
+      <button class="close">&times;</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="welcome">
+      <div class="icon">
+        <img src="assets/pill-icon.svg" alt="Lembra" width="48" height="48">
+      </div>
+      <h1>Hey! This is <strong>Lembra</strong></h1>
+      <p class="subtitle">I'll bug you every day (and I <strong>mean</strong> it) so you don't forget your stuff. What do you need me to remind you about?</p>
+    </div>
+
+    <div class="section-label">Your reminders</div>
+    <div class="items-list" id="items-list"></div>
+    <button class="add-btn" id="add-btn">+ One more thing</button>
+
+    <button class="start-btn" id="start-btn" disabled>Let's roll</button>
+    <div class="footer-hint">Don't worry, you can tweak this stuff later</div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/titlebar.js"></script>
+  <script src="js/time-picker.js"></script>
+  <script src="js/onboarding.js"></script>
+</div>
+</body>
+</html>

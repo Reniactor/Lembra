@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lembra</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/titlebar.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/history.css">
+  <link rel="stylesheet" href="css/settings.css">
+  <link rel="stylesheet" href="css/time-picker.css">
+  <style>html { background: var(--bg-primary, #1a1410); }</style>
+</head>
+<body>
+<div class="window">
+  <div class="titlebar">
+    <span class="title">Lembra</span>
+    <div class="controls">
+      <button class="minimize">&#x2015;</button>
+      <button class="close">&times;</button>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a class="active" data-tab="history">History</a>
+    <a data-tab="settings">Settings</a>
+  </div>
+
+  <!-- History Tab -->
+  <div class="tab-content active" id="tab-history">
+    <div class="header">
+      <div>
+        <h1>History</h1>
+        <div class="subtitle">How you've been doing</div>
+      </div>
+      <div class="month-nav">
+        <button id="prev-month">&#8249;</button>
+        <span class="month-label" id="month-label">APR 2026</span>
+        <button id="next-month">&#8250;</button>
+      </div>
+    </div>
+    <div class="streak-bar" id="streak-bar"></div>
+    <div class="day-cards" id="day-cards"></div>
+  </div>
+
+  <!-- Settings Tab -->
+  <div class="tab-content" id="tab-settings">
+    <div>
+      <h1>Settings</h1>
+      <div class="page-subtitle">Tweak your reminders</div>
+    </div>
+
+    <div class="section" style="margin-top: 24px;">
+      <div class="section-label">Reminders</div>
+      <div class="items-list" id="items-list"></div>
+      <button class="add-btn" id="add-btn">+ Add item</button>
+    </div>
+
+    <div class="section" style="margin-top: 24px;">
+      <div class="section-label">Appearance</div>
+      <div class="color-picker-row">
+        <label>Accent color</label>
+        <div class="color-swatch" id="color-swatch">
+          <input type="color" id="accent-picker" value="#f0a060">
+        </div>
+        <input type="text" class="color-hex" id="accent-hex" value="#f0a060" maxlength="7">
+      </div>
+      <div class="theme-options" id="theme-options">
+        <div class="theme-option" data-theme="warm">
+          <div class="preview" style="background: linear-gradient(135deg, #1a1410, #2a1d14); border-bottom: 2px solid #f0a060;"></div>
+          <div class="theme-name">Warm</div>
+        </div>
+        <div class="theme-option" data-theme="cool">
+          <div class="preview" style="background: linear-gradient(135deg, #101418, #0c1014); border-bottom: 2px solid #6a9fd8;"></div>
+          <div class="theme-name">Cool</div>
+        </div>
+        <div class="theme-option" data-theme="dark">
+          <div class="preview" style="background: linear-gradient(135deg, #0a0a0a, #050505); border-bottom: 2px solid #a78bfa;"></div>
+          <div class="theme-name">Dark</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top: 24px;">
+      <div class="section-label">Behavior</div>
+      <div class="toggle-row">
+        <div>
+          <label>Auto-start with Windows</label>
+          <div class="toggle-desc">Launch Lembra when you log in</div>
+        </div>
+        <button class="toggle" id="toggle-autostart"></button>
+      </div>
+      <div class="toggle-row">
+        <div>
+          <label>Reminder sound</label>
+          <div class="toggle-desc">Play a sound when the overlay pops up</div>
+        </div>
+        <button class="toggle" id="toggle-sound"></button>
+      </div>
+    </div>
+
+    <div class="section danger-section" style="margin-top: 24px;">
+      <div class="section-label">Danger zone</div>
+      <div class="danger-btns">
+        <button class="danger-btn" id="btn-export">Export all data</button>
+        <button class="danger-btn" id="btn-import">Import data</button>
+        <button class="danger-btn" id="btn-reset">Reset everything</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- Custom confirm modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <div class="modal-title" id="modal-title">Are you sure?</div>
+      <div class="modal-desc" id="modal-desc">This can't be undone.</div>
+      <div class="modal-actions">
+        <button class="modal-btn cancel" id="modal-cancel">Cancel</button>
+        <button class="modal-btn danger" id="modal-confirm">Do it</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/titlebar.js"></script>
+  <script src="js/time-picker.js"></script>
+  <script src="js/main.js"></script>
+</div>
+</body>
+</html>

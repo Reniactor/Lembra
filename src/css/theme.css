@@ -1,0 +1,51 @@
+:root {
+  /* Accent — overridden by JS from config */
+  --accent: #f0a060;
+  --accent-hover: color-mix(in srgb, var(--accent), white 15%);
+  --accent-dim: color-mix(in srgb, var(--accent), transparent 85%);
+  --accent-glow: color-mix(in srgb, var(--accent), transparent 70%);
+
+  /* Background themes */
+  --bg-primary: #1a1410;
+  --bg-secondary: #151210;
+  --bg-card: rgba(255, 255, 255, 0.025);
+  --bg-card-hover: rgba(255, 255, 255, 0.035);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-accent: color-mix(in srgb, var(--accent), transparent 75%);
+
+  /* Text */
+  --text-primary: #f0e6dc;
+  --text-secondary: #c4a882;
+  --text-muted: #6a5a4a;
+  --text-dim: #4a3a2a;
+
+  /* Status */
+  --color-taken: #4ade80;
+  --color-missed: var(--accent);
+}
+
+/* Cool theme */
+[data-theme="cool"] {
+  --bg-primary: #101418;
+  --bg-secondary: #0c1014;
+  --bg-card: rgba(140, 180, 255, 0.025);
+  --bg-card-hover: rgba(140, 180, 255, 0.04);
+  --border-subtle: rgba(140, 180, 255, 0.06);
+  --text-primary: #e0e6f0;
+  --text-secondary: #8a9ab0;
+  --text-muted: #4a5a70;
+  --text-dim: #2a3a50;
+}
+
+/* Pure dark theme */
+[data-theme="dark"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #050505;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(255, 255, 255, 0.05);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --text-primary: #e8e8e8;
+  --text-secondary: #a0a0a0;
+  --text-muted: #606060;
+  --text-dim: #383838;
+}

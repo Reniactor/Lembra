@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header .subtitle {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.month-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.month-nav button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  font-size: 18px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.month-nav button:hover {
+  color: var(--text-secondary);
+}
+
+.month-nav .month-label {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.streak-bar {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 24px;
+}
+
+.streak-bar .day-segment {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border-subtle);
+}
+
+.streak-bar .day-segment.taken {
+  background: var(--color-taken);
+}
+
+.streak-bar .day-segment.missed {
+  background: var(--accent);
+}
+
+.day-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.day-card {
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: background 0.2s;
+}
+
+.day-card.today {
+  background: color-mix(in srgb, var(--color-taken), transparent 94%);
+  border-color: color-mix(in srgb, var(--color-taken), transparent 88%);
+}
+
+.day-card.missed {
+  background: var(--accent-dim);
+  border-color: color-mix(in srgb, var(--accent), transparent 90%);
+}
+
+.day-card .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.day-card .icon.taken {
+  background: color-mix(in srgb, var(--color-taken), transparent 88%);
+}
+
+.day-card .icon.missed {
+  background: var(--accent-dim);
+}
+
+.day-card .icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.day-card .info {
+  flex: 1;
+}
+
+.day-card .info .day-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.day-card:not(.today) .info .day-label {
+  color: var(--text-secondary);
+}
+
+.day-card .info .status {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.day-card .info .status.taken {
+  color: var(--color-taken);
+}
+
+.day-card:not(.today) .info .status.taken {
+  opacity: 0.7;
+}
+
+.day-card .info .status.missed {
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+.day-card .date-label {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.day-card.today .date-label {
+  color: var(--text-secondary);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+}

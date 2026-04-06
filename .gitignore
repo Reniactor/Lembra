@@ -1,0 +1,9 @@
+node_modules/
+src-tauri/target/
+.superpowers/
+app-icon.png
+.claude/
+src-tauri/keys/
+copy.md
+docs/superpowers/
+.playwright-mcp/

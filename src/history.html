@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lembra — History</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/titlebar.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/history.css">
+  <style>html { background: var(--bg-primary, #1a1410); }</style>
+</head>
+<body>
+<div class="window">
+  <div class="titlebar">
+    <span class="title">History</span>
+    <div class="controls">
+      <button class="minimize">&#x2015;</button>
+      <button class="close">&times;</button>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a class="active" data-page="history.html">History</a>
+    <a data-page="settings.html">Settings</a>
+  </div>
+
+  <div style="padding: 24px 28px;">
+    <div class="header">
+      <div>
+        <h1>History</h1>
+        <div class="subtitle">How you've been doing</div>
+      </div>
+      <div class="month-nav">
+        <button id="prev-month">&#8249;</button>
+        <span class="month-label" id="month-label">APR 2026</span>
+        <button id="next-month">&#8250;</button>
+      </div>
+    </div>
+
+    <div class="streak-bar" id="streak-bar"></div>
+    <div class="day-cards" id="day-cards"></div>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/titlebar.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/history.js"></script>
+</div>
+</body>
+</html>
