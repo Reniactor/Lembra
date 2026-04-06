@@ -1,22 +1,13 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Settings tab styles - scoped to #tab-settings */
 
-body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  padding: 0;
-  min-height: 100vh;
-}
-
-.content {
-  padding: 24px 28px;
+#tab-settings {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
 }
 
-h1 { font-size: 18px; font-weight: 600; }
-.page-subtitle { color: var(--text-muted); font-size: 12px; margin-top: 4px; }
+#tab-settings h1 { font-size: 18px; font-weight: 600; }
+#tab-settings .page-subtitle { color: var(--text-muted); font-size: 12px; margin-top: 4px; }
 
 /* Sections */
 .section {
@@ -35,7 +26,7 @@ h1 { font-size: 18px; font-weight: 600; }
 }
 
 /* Items list */
-.items-list { display: flex; flex-direction: column; gap: 10px; }
+#tab-settings .items-list { display: flex; flex-direction: column; gap: 10px; }
 
 .item-row {
   display: flex; align-items: center; gap: 10px;
@@ -185,8 +176,6 @@ h1 { font-size: 18px; font-weight: 600; }
 .toggle.active::after { transform: translateX(18px); }
 
 /* Danger zone */
-.danger-section { border-color: rgba(224,80,80,0.15); }
-
 .danger-section .section-label { color: #e05050; }
 
 .danger-btn {
