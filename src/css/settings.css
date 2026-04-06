@@ -1,6 +1,6 @@
 /* Settings tab styles - scoped to #tab-settings */
 
-#tab-settings {
+#tab-settings.active {
   display: flex;
   flex-direction: column;
   gap: 24px;
