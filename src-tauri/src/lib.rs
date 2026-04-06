@@ -214,8 +214,11 @@ pub fn run() {
         .build(tauri::generate_context!())
         .expect("error while building tauri application")
         .run(|_app, event| {
-            if let tauri::RunEvent::ExitRequested { api, .. } = event {
-                api.prevent_exit();
+            if let tauri::RunEvent::ExitRequested { api, code, .. } = event {
+                // Only prevent exit from window closes, not explicit app.exit()
+                if code.is_none() {
+                    api.prevent_exit();
+                }
             }
         });
 }
