@@ -161,14 +161,22 @@ pub fn run() {
                 show_overlay(app.handle());
             }
 
-            // Check for updates in background
+            // Check for updates in background (on launch + every 6 hours)
             let update_handle = app.handle().clone();
             tauri::async_runtime::spawn(async move {
-                std::thread::sleep(std::time::Duration::from_secs(10));
-                let updater = tauri_plugin_updater::UpdaterExt::updater_builder(&update_handle).build();
-                if let Ok(updater) = updater {
-                    if let Ok(Some(update)) = updater.check().await {
-                        let _ = update.download_and_install(|_, _| {}, || {}).await;
+                let mut first = true;
+                loop {
+                    if first {
+                        std::thread::sleep(std::time::Duration::from_secs(10));
+                        first = false;
+                    } else {
+                        std::thread::sleep(std::time::Duration::from_secs(6 * 60 * 60));
+                    }
+                    let updater = tauri_plugin_updater::UpdaterExt::updater_builder(&update_handle).build();
+                    if let Ok(updater) = updater {
+                        if let Ok(Some(update)) = updater.check().await {
+                            let _ = update.download_and_install(|_, _| {}, || {}).await;
+                        }
                     }
                 }
             });
