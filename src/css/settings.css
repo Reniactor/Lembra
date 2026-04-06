@@ -60,8 +60,9 @@
   background: rgba(74,222,128,0.12); border: none; color: #4ade80;
   padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 12px;
   transition: all 0.2s; opacity: 0; font-weight: 500;
+  pointer-events: none;
 }
-.save-btn.visible { opacity: 1; }
+.save-btn.visible { opacity: 1; pointer-events: auto; }
 .save-btn:hover { background: rgba(74,222,128,0.2); }
 
 .remove-btn {
